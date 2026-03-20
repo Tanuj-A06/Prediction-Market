@@ -80,7 +80,7 @@ export function Portfolio() {
         <div className="space-y-6">
           <GlassCard className="border-cy-accent-purple/30 bg-cy-accent-purple/5">
             <h3 className="text-lg font-display text-white mb-4 flex items-center gap-2">
-              <Award className="text-cy-accent-purple" size={18} /> Resolvable Markets
+              <Award className="text-cy-accent-purple" size={18} /> Resolved Markets
             </h3>
             <p className="text-sm text-cy-text-muted mb-4 font-mono">No winnings available to claim at this time.</p>
             <button className="w-full py-2 bg-black/40 border border-cy-border text-cy-text-muted text-sm font-mono rounded cursor-not-allowed uppercase">
@@ -89,7 +89,7 @@ export function Portfolio() {
           </GlassCard>
 
           <GlassCard>
-            <h3 className="text-lg font-display text-white mb-4">Recent Transmissions</h3>
+            <h3 className="text-lg font-display text-white mb-4">Recent Transactions</h3>
             {history.length === 0 ? (
               <p className="text-sm text-cy-text-muted font-mono text-center py-4">No logged history.</p>
             ) : (

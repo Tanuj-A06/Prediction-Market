@@ -14,7 +14,7 @@ export function Landing() {
           The <span className="text-cy-accent-cyan">Future</span> is Immutable.
         </h1>
         <p className="text-lg text-cy-text-muted font-mono max-w-2xl mx-auto mb-8">
-          Welcome to Nexus Markets. Trade on the outcomes of global events, technological breakthroughs, and politics. Powered by the Zeta-Testnet.
+          Welcome to Nexus Markets. Trade on the outcomes of global events, technological breakthroughs, and politics. Powered by the Nexus Engine.
         </p>
         <div className="flex gap-4 justify-center mt-8">
           <GlowButton variant="cyan" onClick={() => navigate('/markets')} className="px-8 py-4 text-lg">
@@ -28,7 +28,7 @@ export function Landing() {
       <div className="mt-20 max-w-4xl mx-auto text-left">
         <h3 className="text-xl font-display text-white mb-4">About Us</h3>
         <p className="text-sm text-cy-text-muted font-mono leading-relaxed">
-          Nexus Markets is a futuristic Prediction Market simulator. While all markets and credits are simulated, it offers realistic order-entry interfaces, latency simulation, and portfolio management. Built for strict Cyber-Glass aesthetic exploration.
+          Nexus Markets is a futuristic Prediction Market simulator. While all markets and credits are simulated, it offers realistic order-entry interfaces, latency simulation, and portfolio management.
         </p>
       </div>
     </div>

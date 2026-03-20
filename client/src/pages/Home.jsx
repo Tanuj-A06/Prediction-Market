@@ -37,8 +37,8 @@ export function Home() {
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-cy-accent-cyan to-cy-accent-purple">Trade Beliefs.</span>
           </motion.h1>
           <p className="text-cy-text-muted font-mono leading-relaxed max-w-lg">
-            Nexus Markets provides a decentralized, low-latency prediction engine.
-            Capitalize on truth before it happens.
+            Nexus Markets provides a low-latency prediction market engine.
+            Capitalize on the future before it happens.
           </p>
           <div className="pt-4 flex gap-4">
             <GlowButton variant="cyan" onClick={() => window.scrollTo({ top: 500, behavior: 'smooth' })}>Explore Markets</GlowButton>

@@ -98,6 +98,18 @@ let markets = [
     noPrice: 0.75,
     volume: 2100000,
     status: "Active"
+  },
+  {
+    id: "mkt_usiranwar",
+    title: "Will the US and Iran reach a diplomatic resolution by April 2026?",
+    category: "Politics",
+    description: "Resolves to Yes if a formal diplomatic agreement is reached between the US and Iran.",
+    resolutionSource: "Multiple",
+    resolutionDate: "2026-04-30T23:59:59Z",
+    yesPrice: 0.25,
+    noPrice: 0.75,
+    volume: 2100000,
+    status: "Active"
   }
 ];
 

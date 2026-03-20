@@ -78,7 +78,7 @@ export function TradingWidget({ market }) {
         <label className="text-xs text-cy-text-muted uppercase mb-2 block font-mono">Amount (Credits)</label>
         <div className="relative">
           <input
-            type="number"
+            type="numeric"
             value={amountStr}
             onChange={(e) => setAmountStr(e.target.value)}
             className="w-full bg-black/50 border border-cy-border rounded-lg py-3 px-4 text-white font-mono focus:outline-none focus:border-cy-accent-cyan transition-colors"
