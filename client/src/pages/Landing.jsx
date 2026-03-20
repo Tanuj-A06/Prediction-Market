@@ -21,7 +21,7 @@ export function Landing() {
             Get Started
           </GlowButton>
           <GlowButton variant="outline" onClick={() => navigate('/login')} className="px-8 py-4 text-lg">
-            Agent Login
+            Login
           </GlowButton>
         </div>
       </motion.div>

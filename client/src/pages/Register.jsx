@@ -10,9 +10,9 @@ import { GlowButton } from '../components/shared/GlowButton';
 import { toast } from 'sonner';
 
 const schema = z.object({
-  username: z.string().min(3, "Agent handle must be at least 3 chars"),
+  username: z.string().min(3, "User handle must be at least 3 chars"),
   email: z.string().email(),
-  password: z.string().min(6, "Passcode must be at least 6 characters")
+  password: z.string().min(6, "Password must be at least 6 characters")
 });
 
 export function Register() {
@@ -22,21 +22,21 @@ export function Register() {
 
   const onSubmit = async (data) => {
     await registerUser(data);
-    toast.success('Agent profile synthesized.');
+    toast.success('User profile created.');
     navigate('/markets');
   };
 
   return (
     <div className="max-w-md mx-auto mt-20">
       <GlassCard className="p-8 border-cy-accent-purple/30">
-        <h2 className="text-2xl font-display text-white mb-2">New Agent Profile</h2>
+        <h2 className="text-2xl font-display text-white mb-2">Create New Profile</h2>
         <p className="text-xs font-mono text-cy-text-muted mb-6">Create credentials to deploy into Nexus Markets.</p>
         
         <form onSubmit={handleSubmit(onSubmit)} className="space-y-4">
           <div>
             <input 
               {...register("username")} 
-              placeholder="Agent Handle" 
+              placeholder="User Handle" 
               className="w-full bg-black/50 border border-cy-border rounded py-3 px-4 text-white font-mono focus:outline-none focus:border-cy-accent-purple transition-colors" 
             />
             {errors.username && <span className="text-cy-no text-xs font-mono mt-1 block">{errors.username.message}</span>}
@@ -53,7 +53,7 @@ export function Register() {
             <input 
               {...register("password")} 
               type="password" 
-              placeholder="Passcode" 
+              placeholder="Password" 
               className="w-full bg-black/50 border border-cy-border rounded py-3 px-4 text-white font-mono focus:outline-none focus:border-cy-accent-purple transition-colors" 
             />
             {errors.password && <span className="text-cy-no text-xs font-mono mt-1 block">{errors.password.message}</span>}
@@ -63,7 +63,7 @@ export function Register() {
           </GlowButton>
         </form>
         <div className="mt-4 text-center text-xs font-mono text-cy-text-muted">
-          Already deployed? <Link to="/login" className="text-cy-accent-purple hover:underline">Access Terminal</Link>.
+          Already registered? <Link to="/login" className="text-cy-accent-purple hover:underline">Login here</Link>.
         </div>
       </GlassCard>
     </div>

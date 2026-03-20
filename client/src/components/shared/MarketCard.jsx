@@ -11,7 +11,7 @@ export function MarketCard({ market }) {
   return (
     <GlassCard hoverGlow className="flex flex-col h-full cursor-pointer group" onClick={() => navigate(`/market/${market.id}`)}>
       <div className="flex justify-between items-start mb-4">
-        <span className="text-xs font-mono px-2 py-1 rounded bg-cy-border/50 text-cy-accent-purple border border-cy-accent-purple/30">
+        <span className="text-xs font-mono px-2 py-1 rounded text-cy-accent-purple border border-cy-accent-purple/30">
           {market.category}
         </span>
         <div className="flex items-center gap-1 text-cy-text-muted text-xs font-mono">
@@ -28,11 +28,11 @@ export function MarketCard({ market }) {
         <div className="flex items-center gap-4">
           <div className="flex flex-col">
             <span className="text-xs text-cy-text-muted">Yes</span>
-            <span className="text-cy-yes font-mono text-lg ">{Math.round(market.yesPrice * 100)}%</span>
+            <span className="text-cy-yes text-red-400 font-mono text-lg ">{Math.round(market.yesPrice * 100)}%</span>
           </div>
           <div className="flex flex-col">
             <span className="text-xs text-cy-text-muted">No</span>
-            <span className="text-cy-no font-mono text-lg">{Math.round(market.noPrice * 100)}%</span>
+            <span className="text-cy-no text-green-400 font-mono text-lg">{Math.round(market.noPrice * 100)}%</span>
           </div>
         </div>
 

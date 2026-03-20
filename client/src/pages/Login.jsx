@@ -21,7 +21,7 @@ export function Login() {
 
   const onSubmit = async (data) => {
     await login(data);
-    toast.success('Access Granted. Welcome back, Agent.');
+    toast.success('Access Granted. Welcome back, User.');
     navigate('/markets');
   };
 
@@ -44,7 +44,7 @@ export function Login() {
             <input 
               {...register("password")} 
               type="password" 
-              placeholder="Passcode" 
+              placeholder="Password" 
               className="w-full bg-black/50 border border-cy-border rounded py-3 px-4 text-white font-mono focus:outline-none focus:border-cy-accent-cyan transition-colors" 
             />
             {errors.password && <span className="text-cy-no text-xs font-mono mt-1 block">{errors.password.message}</span>}
@@ -54,7 +54,7 @@ export function Login() {
           </GlowButton>
         </form>
         <div className="mt-4 text-center text-xs font-mono text-cy-text-muted">
-          No agent credentials? <Link to="/register" className="text-cy-accent-cyan hover:underline">Register here</Link>.
+          Don't have an account? <Link to="/register" className="text-cy-accent-cyan hover:underline">Register here</Link>.
         </div>
       </GlassCard>
     </div>

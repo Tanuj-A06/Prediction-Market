@@ -60,7 +60,7 @@ export function TradingWidget({ market }) {
           }`}
           onClick={() => setOutcome('Yes')}
         >
-          Buy Yes {Math.round(market.yesPrice * 100)}¢
+          Buy Yes {Math.round(market.yesPrice * 100)}Cr
         </button>
         <button
           className={`flex-1 py-3 px-4 rounded-lg font-mono text-sm uppercase transition-all ${
@@ -70,7 +70,7 @@ export function TradingWidget({ market }) {
           }`}
           onClick={() => setOutcome('No')}
         >
-          Buy No {Math.round(market.noPrice * 100)}¢
+          Buy No {Math.round(market.noPrice * 100)}Cr
         </button>
       </div>
 

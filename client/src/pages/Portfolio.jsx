@@ -19,8 +19,8 @@ export function Portfolio() {
   return (
     <div className="max-w-6xl mx-auto space-y-8">
       <div>
-        <h1 className="text-3xl font-display font-bold text-white mb-2">Command Center</h1>
-        <p className="text-cy-text-muted font-mono text-sm">Track your active deployments and historical performance.</p>
+        <h1 className="text-3xl font-display font-bold text-white mb-2">Holdings</h1>
+        <p className="text-cy-text-muted font-mono text-sm">Track your active positions and historical performance.</p>
       </div>
 
       <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
