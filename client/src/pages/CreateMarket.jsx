@@ -6,7 +6,7 @@ import { z } from 'zod';
 import { useNavigate } from 'react-router-dom';
 import { GlassCard } from '../components/shared/GlassCard';
 import { GlowButton } from '../components/shared/GlowButton';
-import { marketService } from '../services/mockApi';
+import { useAdminStore } from '../store/useAdminStore';
 import { toast } from 'sonner';
 
 const schema = z.object({
@@ -28,13 +28,24 @@ export function CreateMarket() {
     }
   });
 
+  const addPendingMarket = useAdminStore(state => state.addPendingMarket);
+
   const onSubmit = async (data) => {
     try {
-      const newMarket = await marketService.createMarket(data);
-      toast.success('Market Synced to Network');
-      navigate(`/market/${newMarket.id}`);
+      await new Promise(res => setTimeout(res, 800));
+      const pending = {
+        id: `mkt_pend_${Date.now()}`,
+        ...data,
+        status: "awaiting_approval",
+        yesPrice: data.initialProbability || 0.5,
+        noPrice: 1 - (data.initialProbability || 0.5),
+        volume: 0
+      };
+      addPendingMarket(pending);
+      toast.success('Market submitted for Oracle Review');
+      navigate(`/portfolio`);
     } catch (err) {
-      toast.error('Failed to create market');
+      toast.error('Failed to submit market');
     }
   };
 

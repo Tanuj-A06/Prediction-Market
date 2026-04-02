@@ -112,6 +112,14 @@ export function MarketDetail() {
                {market.resolutionSource}
              </a>
            </GlassCard>
+           <GlassCard className="md:col-span-2">
+             <h3 className="text-sm font-mono text-cy-text-muted uppercase tracking-wider mb-4 flex items-center gap-2">
+               Protocol Transparency (Oracle Script)
+             </h3>
+             <pre className="bg-black/50 p-4 rounded-lg overflow-x-auto text-xs font-mono text-cy-accent-cyan border border-cy-border/30">
+               <code>{market.resolutionScript || `fetch("https://${market.resolutionSource}/api")\n  .then(res => res.json())\n  .then(data => data.value > threshold ? "YES" : "NO");`}</code>
+             </pre>
+           </GlassCard>
         </div>
       </div>
 

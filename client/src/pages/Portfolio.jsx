@@ -24,8 +24,8 @@ export function Portfolio() {
       </div>
 
       <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-        <StatHolo label="Total Value" value={totalValue.toLocaleString(undefined, { maximumFractionDigits: 2 })} prefix="C$ " trend={12.4} />
-        <StatHolo label="Cash Balance" value={balance.toLocaleString(undefined, { maximumFractionDigits: 2 })} prefix="C$ " />
+        <StatHolo label="Total Value" value={totalValue.toLocaleString(undefined, { maximumFractionDigits: 2 })} prefix="Cr " trend={12.4} />
+        <StatHolo label="Cash Balance" value={balance.toLocaleString(undefined, { maximumFractionDigits: 2 })} prefix="Cr " />
         <StatHolo label="Active Positions" value={positions.length.toString()} />
       </div>
 

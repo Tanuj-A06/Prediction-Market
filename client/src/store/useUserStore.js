@@ -7,6 +7,7 @@ export const useUserStore = create((set, get) => ({
   positions: [],
   history: [],
   isAuthenticated: false,
+  isAdmin: true,
   
   login: async (data) => {
     // Simulate latency
@@ -69,6 +70,48 @@ export const useUserStore = create((set, get) => ({
     });
 
     return { success: true, shares };
+  },
+
+  sellPosition: async (marketId, outcome, sellShares) => {
+    const { balance, positions, history } = get();
+    await new Promise(res => setTimeout(res, 800));
+
+    const market = await marketService.getMarketById(marketId);
+    const executionPrice = outcome === 'Yes' ? market.yesPrice : market.noPrice;
+    const payout = sellShares * executionPrice;
+
+    tradingService.simulatePriceImpact(marketId, outcome === 'Yes' ? 'No' : 'Yes', payout);
+
+    const positionIndex = positions.findIndex(p => p.marketId === marketId && p.outcome === outcome);
+    if (positionIndex === -1) throw new Error("Position not found");
+
+    const pos = positions[positionIndex];
+    if (pos.shares < sellShares) throw new Error("Not enough shares to sell");
+
+    let newPositions = [...positions];
+    if (pos.shares - sellShares < 0.001) {
+      newPositions.splice(positionIndex, 1);
+    } else {
+      newPositions[positionIndex] = { ...pos, shares: pos.shares - sellShares };
+    }
+
+    const newHistory = {
+      id: `trx_${Date.now()}`,
+      marketId,
+      type: 'Sell',
+      outcome,
+      amount: payout,
+      shares: sellShares,
+      timestamp: new Date().toISOString()
+    };
+
+    set({
+      balance: balance + payout,
+      positions: newPositions,
+      history: [newHistory, ...history]
+    });
+
+    return { success: true, payout };
   },
 
   claimWinnings: async (marketId) => {

@@ -17,10 +17,10 @@ export function Landing() {
           Welcome to Nexus Markets. Trade on the outcomes of global events, technological breakthroughs, and politics. Powered by the Nexus Engine.
         </p>
         <div className="flex gap-4 justify-center mt-8">
-          <GlowButton variant="cyan" onClick={() => navigate('/markets')} className="px-8 py-4 text-lg">
+          <GlowButton variant="cyan" onClick={() => navigate('/markets')} className="px-8 py-3 text-lg">
             Get Started
           </GlowButton>
-          <GlowButton variant="outline" onClick={() => navigate('/login')} className="px-8 py-4 text-lg">
+          <GlowButton variant="outline" onClick={() => navigate('/login')} className="px-8 py-3 text-lg">
             Login
           </GlowButton>
         </div>
