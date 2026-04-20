@@ -1,6 +1,6 @@
 // src/store/useMarketStore.js
 import { create } from 'zustand';
-import { marketService } from '../services/mockApi';
+import { backendMarketService } from '../services/api';
 
 export const useMarketStore = create((set, get) => ({
   markets: [],
@@ -26,7 +26,7 @@ export const useMarketStore = create((set, get) => ({
     set({ isLoading: true, error: null });
     try {
       const { filters } = get();
-      const markets = await marketService.getMarkets(filters);
+      const markets = await backendMarketService.getMarkets(filters);
       set({ markets, isLoading: false });
     } catch (err) {
       set({ error: err.message, isLoading: false });
