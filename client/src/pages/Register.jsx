@@ -21,9 +21,13 @@ export function Register() {
   const navigate = useNavigate();
 
   const onSubmit = async (data) => {
-    await registerUser(data);
-    toast.success('User profile created.');
-    navigate('/markets');
+    try {
+      await registerUser(data);
+      toast.success('User profile created.');
+      navigate('/markets');
+    } catch (err) {
+      toast.error(err.message || 'Registration failed');
+    }
   };
 
   return (
