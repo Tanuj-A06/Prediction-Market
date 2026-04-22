@@ -1,5 +1,5 @@
 // src/App.jsx
-import React from 'react';
+import React, { useEffect } from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { Layout } from './components/Layout';
 import { Home } from './pages/Home';
@@ -10,8 +10,15 @@ import { Landing } from './pages/Landing';
 import { Login } from './pages/Login';
 import { Register } from './pages/Register';
 import { AdminDashboard } from './pages/AdminDashboard';
+import { useUserStore } from './store/useUserStore';
 
 function App() {
+  const restoreSession = useUserStore(state => state.restoreSession);
+
+  useEffect(() => {
+    restoreSession();
+  }, []);
+
   return (
     <Router>
       <Routes>
