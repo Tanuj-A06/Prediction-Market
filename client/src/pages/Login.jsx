@@ -20,9 +20,13 @@ export function Login() {
   const navigate = useNavigate();
 
   const onSubmit = async (data) => {
-    await login(data);
-    toast.success('Access Granted. Welcome back, User.');
-    navigate('/markets');
+    try {
+      await login(data);
+      toast.success('Access Granted. Welcome back, User.');
+      navigate('/markets');
+    } catch (err) {
+      toast.error(err.message || 'Login failed');
+    }
   };
 
   return (
