@@ -13,7 +13,7 @@ export function Footer() {
         <div className="flex gap-6">
           <Link to="/markets" className="hover:text-white transition-colors">Markets</Link>
           <Link to="/portfolio" className="hover:text-white transition-colors">Portfolio</Link>
-          <a href="mailto:contact@nexus.markets" className="hover:text-white transition-colors">Contact</a>
+          <a href="mailto:dharshan.a@somaiya.edu" className="hover:text-white transition-colors">Contact</a>
         </div>
         <span className="uppercase tracking-widest text-[#B026FF]">Network: Nexus | v2.0.26</span>
       </div>
